@@ -76,7 +76,7 @@ final class IdentifiableItemCodec implements Codec<NodeIdentifierWithPredicates,
         final List<QName> sortedKeys;
         if (unsortedKeys.size() > 1) {
             final List<QName> tmp = new ArrayList<>(unsortedKeys);
-            Collections.sort(tmp, (q1, q2) -> q1.getLocalName().compareToIgnoreCase(q2.getLocalName()));
+            Collections.sort(tmp, (q1, q2) -> q1.getLocalName().compareTo(q2.getLocalName()));
             sortedKeys = tmp;
         } else {
             sortedKeys = unsortedKeys;
